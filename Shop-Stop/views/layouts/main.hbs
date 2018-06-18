@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>ShopStop</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="/styles/site.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <ul>
+        <li>
+          <a href="/">Home Page</a>
+        </li>
+        {{#if currentUser}}
+        <li>
+          <a href="/addProduct">Add Product</a>
+        </li>
+        <li>
+          <a href="/addCategory">Add Category</a>
+        </li>
+        <li class="align-right">
+          <form id="logout-form" action="/logout" method="POST"></form>
+          <a href="javascript:document.getElementById('logout-form').submit()">Logout</a>
+        </li>
+        <li class="align-right">
+          <a>{{currentUser.username}}</a>
+        </li>
+        {{else}}
+        <li class="align-right">
+          <a href="/login">Login</a>
+        </li>
+        <li class="align-right">
+          <a href="/register">Register</a>
+        </li>
+        {{/if}}
+      </ul>
+    </nav>
+  </header>
+  {{#if globalErr}}
+  <h2 class="error-msg">{{globalErr}}</h2>
+  {{/if}}
+  {{{body}}}
+  <footer>
+    <p>&copy; ShopStop</p>
+  </footer>
+</body>
+
+</html>

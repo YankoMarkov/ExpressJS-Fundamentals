@@ -1,0 +1,36 @@
+<h1>Profile</h1>
+<section>
+  <h2>Username: {{user.username}}</h2>
+</section>
+<section>
+  <h2>Rent history</h2>
+  <table>
+    <thead>
+      <tr>
+        <td>Car</td>
+        <td>Duration</td>
+        <td>Price</td>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each userCars}}
+      <tr>
+        <td>{{this.car.marc}} {{this.car.model}}</td>
+        <td>{{this.days}}</td>
+        <td>{{this.price}}</td>
+        <td>
+          <a href="/unrentCar/{{this.car._id}}">Unrent</a>
+        </td>
+      </tr>
+      {{else}}
+      <tr>
+        <td colspan="3">
+          <i>No rent history.
+            <a href="/viewAll/0">Rent now</a>
+          </i>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</section>

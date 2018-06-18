@@ -1,0 +1,24 @@
+{{#if detailsInfo}}
+<h1>Search Meme</h1>
+<div class="container">
+  <form action="/searchMeme" enctype="multipart/form-data" method="POST">
+    <label for="movieTitle">Title</label>
+    <input type="text" id="movieTitle" name="memeName" placeholder="The title of the movie">
+    <select name="genreSelect" id="genreSelect">
+      <option value="all">all</option>
+      {{#each genres}}
+      <option value="{{this.genreName}}">{{this.genreName}}</option>
+      {{/each}}
+    </select>
+    <input value="Submit" type="submit">
+  </form>
+</div>
+{{else}}
+<div class="content">
+  {{#each memeId}}
+  <img class="memePoster" src="{{this.memePath}}" alt="">
+  <h3>Name: {{this.memeName}}</h3>
+  <p> {{this.memeDescription}}</p>
+  {{/each}}
+</div>
+{{/if}}

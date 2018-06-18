@@ -1,0 +1,16 @@
+<div class="content">
+  <form enctype="multipart/form-data" method="POST">
+    <h1 class="head-title">Welcome to Book Library!</h1>
+    <div class="cards">
+      {{#each books}}
+      <div class="product-card">
+        <a href="/detailsView/{{this._id}}">
+          <img class="product-img" src="{{this.image}}" alt="">
+        </a>
+        <h2>Title: {{this.title}}</h2>
+        <p>Author: {{this.author}}</p>
+      </div>
+      {{/each}}
+    </div>
+  </form>
+</div>

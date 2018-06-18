@@ -1,0 +1,44 @@
+<form enctype="multipart/form-data" method="POST">
+  <h1>Welcome to RentACar!</h1>
+  <div>
+    <form>
+      <input type="text" name="query" placeholder="Search...">
+      <input id="submit" type="submit" value="Search">
+    </form>
+  </div>
+  <div class="cars-container">
+    {{#if isAdmin}} {{#each cars}}
+    <div class="car-container">
+      <section>
+        <h3>Marc: {{this.marc}}</h3>
+        <img src="{{this.image}}" alt="car image">
+      </section>
+      <section class="info">
+        <h4>Model: {{this.model}}</h4>
+        <h4>Year: {{this.year}}</h4>
+        <a href="/editCar/{{this._id}}">Edit</a>
+        <a href="/rentCar/{{this._id}}">Rent</a>
+        <a href="/updateCar/{{this._id}}">Update</a>
+        <a href="/deleteCar/{{this._id}}">Delete</a>
+      </section>
+    </div>
+    {{/each}} {{else}} {{#each cars}}
+    <div class="car-container">
+      <section>
+        <h3>Marc: {{this.marc}}</h3>
+        <img src="{{this.image}}" alt="car image">
+      </section>
+      <section class="info">
+        <h4>Model: {{this.model}}</h4>
+        <h4>Year: {{this.year}}</h4>
+        <a href="/editCar/{{this._id}}">Edit</a>
+        <a href="/rentCar/{{this._id}}">Rent</a>
+      </section>
+    </div>
+    {{/each}} {{/if}}
+  </div>
+  <div>
+    <a href="/viewAll/{{page.prevPage}}">Prev</a>
+    <a href="/viewAll/{{page.nextPage}}">Next</a>
+  </div>
+</form>

@@ -1,0 +1,25 @@
+<h1>Welcome to SoftUni Wiki!</h1>
+<section>
+  <h2>Edit article
+    <div class="controls">
+      {{#if isAdmin}}
+      <a href="/lock/{{article._id}}">Lock article</a>
+      <a href="/unlock/{{article._id}}">Unlock article</a>
+      {{/if}}
+    </div>
+  </h2>
+  <div class="spacer">
+    <form method="POST">
+      <label>Article title</label>
+      <h3>{{article.title}}</h3>
+      <label>Content</label>
+      <textarea>
+          {{#each edits}}
+          {{this.content}}
+          {{/each}}
+        </textarea>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</section>

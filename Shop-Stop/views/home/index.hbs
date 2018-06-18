@@ -1,0 +1,24 @@
+<div class="content">
+  <form enctype="multipart/form-data" method="POST">
+    <h1 class="head-title">Welcome to ShopStop!</h1>
+    <div class="form-group">
+      <form id="search-form">
+        <input type="text" name="query" placeholder="Search...">
+        <input type="submit" value="Search">
+      </form>
+    </div>
+    <div class="cards">
+      {{#each products}}
+      <div class="product-card">
+        <img class="product-img" src="{{this.image}}">
+        <h2>{{this.name}}</h2>
+        <p>{{this.description}}</p>
+        <a class="btn btn-small btn-success" href="/buyProduct/{{this._id}}">Buy</a>
+        <a class="btn btn-small btn-warning" href="/editProduct/{{this._id}}">Edit</a>
+        <a class="btn btn-small btn-danger" href="/deleteProduct/{{this._id}}">Delete</a>
+        <a class="btn btn-small btn-primary" href="/moreCategory/{{category._id}}">More {{category.name}}</a>
+      </div>
+      {{/each}}
+    </div>
+  </form>
+</div>

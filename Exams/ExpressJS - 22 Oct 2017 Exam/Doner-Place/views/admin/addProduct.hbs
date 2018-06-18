@@ -1,0 +1,31 @@
+<h2>Create Product</h2>
+<form enctype="multipart/form-data" method="POST">
+  <div>
+    <label for="category">Category</label>
+    <select name="category" id="category">
+      <option value="beef">Beef</option>
+      <option value="chicken">Chicken</option>
+      <option value="lamb">Lamb</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="imageUrl">Image Url</label>
+    <input id="imageUrl" name="image" type="file">
+  </div>
+
+  <div>
+    <label for="size">Size</label>
+    <input id="size" name="size" type="number">
+  </div>
+
+  <div>
+    <label for="toppings">Toppings</label>
+    <textarea id="toppings" name="toppings" type="text"></textarea>
+  </div>
+
+  <div>
+    <input class="button" type="submit" value="Create" style="border:0">
+  </div>
+
+</form>

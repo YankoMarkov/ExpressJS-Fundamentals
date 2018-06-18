@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>RentaCar</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+
+<body class="preload">
+  <header>
+    <nav>
+      <img id="logo" src="/images/logo.png" alt="logo" />
+      <ul id="main-nav">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/viewAll/0">View All</a>
+        </li>
+        {{#if currentUser}}
+        <li>
+          <a href="/profile">Profile</a>
+        </li>
+        <li>
+          <a href="/addCar">Add Car</a>
+        </li>
+        <ul id="user">
+          <form id="logout-form" action="/logout" method="POST"></form>
+          <li>
+            <a href="javascript:document.getElementById('logout-form').submit()">Logout</a>
+          </li>
+          <li>
+            <a>{{currentUser.username}}</a>
+          </li>
+        </ul>
+        {{else}}
+        <ul id="user">
+          <li>
+            <a href="/login">Login</a>
+          </li>
+          <li>
+            <a href="/register">Register</a>
+          </li>
+        </ul>
+        {{/if}}
+      </ul>
+    </nav>
+  </header>
+  <section id="main-container">
+    <main>
+      {{#if globalErr}}
+      <h2 class="error-msg">{{globalErr}}</h2>
+      {{/if}} {{{body}}}
+    </main>
+  </section>
+  <footer>
+    <p>&copy; RentaCar</p>
+  </footer>
+</body>
+
+</html>

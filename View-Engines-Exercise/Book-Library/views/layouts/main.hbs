@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Book Library</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="/styles/site.css" />
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <ul>
+        <li>
+          <a href="/">Home Page</a>
+        </li>
+        <li>
+          <a href="/addBook">Add Book</a>
+        </li>
+        <li>
+          <a href="/viewAll">View All</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  {{#if globalErr}}
+  <h2 class="error-msg">{{globalErr}}</h2>
+  {{/if}} 
+  {{{body}}}
+  <footer>
+    <p>&copy; Book Library</p>
+  </footer>
+</body>
+
+</html>

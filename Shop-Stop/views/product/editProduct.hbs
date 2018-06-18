@@ -1,0 +1,41 @@
+<div class="content">
+  <form class="form center-form" method="POST" enctype="multipart/form-data">
+    <h2 class="head-title">Edit Product</h2>
+
+    <div class="form-group">
+      <label for="image" class="product-card"></label>
+      <img id="image" class="product-img" src="{{product.image}}">
+    </div>
+
+    <div class="form-group">
+      <label for="name">name</label>
+      <input id="name" class="input-field" name="name" type="text" value="{{product.name}}" />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" class="input-field" name="description" type="text">{{product.description}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input id="price" class="input-field" name="price" type="number" step="0.01" min="0" value="{{product.price}}" />
+    </div>
+
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input id="image" class="input-field" name="image" type="file" accept=".jpg,.jpeg,.png" />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Group</label>
+      <select id="description" class="input-field" name="category">
+        <option value="{{product.category._id}}">{{product.category.name}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <input class="btn form-btn btn-warning" type="submit" value="Edit">
+    </div>
+  </form>
+</div>

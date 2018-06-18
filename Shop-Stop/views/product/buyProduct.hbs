@@ -1,0 +1,29 @@
+<div class="content">
+  <form class="form center-form" method="POST" enctype="multipart/form-data">
+    <h2 class="head-title">Buy Product</h2>
+    
+    <div class="form-group">
+      <label for="image" class="product-card"></label>
+      <img id="image" class="product-img" src="{{product.image}}">
+    </div>
+
+    <div class="form-group">
+      <label for="name">name</label>
+      <input id="name" class="input-field" name="name" type="text" value="{{product.name}}" disabled />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" class="input-field" name="description" type="text" disabled>{{product.description}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input id="price" class="input-field" name="price" type="number" value="{{product.price}}" disabled />
+    </div>
+
+    <div class="form-group">
+      <input class="btn form-btn btn-success" type="submit" value="Buy">
+    </div>
+  </form>
+</div>
